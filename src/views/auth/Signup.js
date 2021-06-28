@@ -34,6 +34,7 @@ export default function Signup() {
     <>
       <Card>
         <Card.Body>
+          <Card.Img className="top center" src="ufarmtestlogo.png" />
           <h2 className="text-center mb-4">Sign Up</h2>
           {error && <Alert variant="danger">{error}</Alert>}
           <Form onSubmit={handleSubmit}>
@@ -49,7 +50,13 @@ export default function Signup() {
               <Form.Label>Password Confirmation</Form.Label>
               <Form.Control type="password" ref={passwordConfirmRef} required />
             </Form.Group>
-            <Button disabled={loading} className="w-100 mt-3" type="submit">
+            <Button
+              disabled={loading}
+              className="w-100 mt-3"
+              type="submit"
+              variant="default"
+              style={{ color: "white", background: "#64931b" }}
+            >
               Sign Up
             </Button>
           </Form>

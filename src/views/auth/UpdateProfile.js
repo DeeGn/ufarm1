@@ -31,7 +31,7 @@ export default function UpdateProfile() {
     }
     Promise.all(promises)
       .then(() => {
-        history.push("/");
+        history.push("/settings");
       })
       .catch(() => {
         setError("Failed to update account");
@@ -56,7 +56,7 @@ export default function UpdateProfile() {
                 defaultValue={currentUser.email}
               />
             </Form.Group>
-            <Form.Group id="password">
+            <Form.Group id="password" className="mt-3">
               <Form.Label>Password</Form.Label>
               <Form.Control
                 type="password"
@@ -64,7 +64,7 @@ export default function UpdateProfile() {
                 placeholder="Leave blank to keep the same"
               />
             </Form.Group>
-            <Form.Group id="password-confirm">
+            <Form.Group id="password-confirm" className="mt-3">
               <Form.Label>Password Confirmation</Form.Label>
               <Form.Control
                 type="password"
@@ -72,14 +72,20 @@ export default function UpdateProfile() {
                 placeholder="Leave blank to keep the same"
               />
             </Form.Group>
-            <Button disabled={loading} className="w-100" type="submit">
+            <Button
+              disabled={loading}
+              className="w-100 mt-3"
+              type="submit"
+              variant="default"
+              style={{ color: "white", background: "#64931b" }}
+            >
               Update
             </Button>
           </Form>
         </Card.Body>
       </Card>
       <div className="w100 text-center mt-2">
-        <Link to="/login">Cancel</Link>
+        <Link to="/settings">Cancel</Link>
       </div>
     </>
   );

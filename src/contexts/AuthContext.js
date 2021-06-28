@@ -42,7 +42,7 @@ export function AuthProvider({ children }) {
     });
 
     return unsubscribe;
-  }, []);
+  }, [])
 
   const value = {
     currentUser,
@@ -52,11 +52,11 @@ export function AuthProvider({ children }) {
     resetPassword,
     updateEmail,
     updatePassword,
-  };
+  }
 
   return (
     <AuthContext.Provider value={value}>
       {!loading && children}
     </AuthContext.Provider>
-  );
+  )
 }
